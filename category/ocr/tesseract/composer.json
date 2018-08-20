@@ -1,0 +1,13 @@
+{
+    "name": "nuc/japanese",
+    "type": "project",
+    "authors": [
+        {
+            "name": "lunaczp",
+            "email": "moon.zhp@gmail.com"
+        }
+    ],
+    "require": {
+        "thiagoalessio/tesseract_ocr": "^2.6"
+    }
+}
