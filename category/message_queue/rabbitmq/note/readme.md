@@ -88,3 +88,13 @@ Exchanger模式：
         - (进程退出，queue自动销毁)
 
 更多参考 https://www.rabbitmq.com/tutorials/tutorial-one-php.html
+
+
+适用场景与对比
+==============
+- 内存型消息队列，虽然支持持久化但是性能会有较大影响。对持久化有需求的场景，优先使用Kafka
+- 不支持回溯，因为消息消费完就删除。如果需要支持回溯，及自定义消费偏移，使用Kafka
+- 高吞吐量的场景，Kafka表现更优 http://jm.taobao.org/2016/04/01/kafka-vs-rabbitmq-vs-rocketmq-message-send-performance/
+- 消息消费有较大延迟或者堆积的场景，不建议使用RabbitMQ
+    - 因为是内存型，所有消息都在内存，当开启了ack而大量消息没有被ack的情况下，消息堆积有可能撑爆内存。比如消费端挂了几个小时，对RabbitMQ server 的性能影响很大。
+
