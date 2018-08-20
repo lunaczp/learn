@@ -16,3 +16,24 @@
 	- 在消费代码内添加ack代码
 
 __注意__：如果开启了ack配置，但是代码内忘记了ack，那么消息就会一直存在于server的内存中，有可能会撑爆server内存。
+
+## Other
+
+**prefetch**
+`prefetch=1` 让rabbitmq consumer一次只处理一条消息，只有处理完，server才会投递给它下一条。
+```
+# usage
+$channel->basic_qos(null, 1, null);
+
+# proto
+    /**
+     * Specifies QoS
+     *
+     * @param int $prefetch_size
+     * @param int $prefetch_count
+     * @param bool $a_global
+     * @return mixed
+     */
+    public function basic_qos($prefetch_size, $prefetch_count, $a_global)
+    {
+```
