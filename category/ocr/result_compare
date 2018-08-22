@@ -1,0 +1,43 @@
+## hor
+src									|baidu                              |tesseract							|winner
+jp_hor.jpg							|ねえ、あなたの名前は何ですか?      |ねぇ` ぁなたの名前は何ですか ?		|baidu
+jp_hor_2line.png					|冷やっこ							|淹やっ‥							|baidu
+									|とまど								|
+jp_hor_2line.png					|つけもの							|りけもの							|baidu
+									|もろきゆう							|もろきゆう
+jp_hor_2line_withNum.png			|冷や								|淹やっご							|baidu
+									|￥280								|どまど
+									|とまど								|\28。
+									|￥280								|\280
+jp_hor_2line_withNum_1.png			|つけもの							|NULL								|baidu
+									|￥280								|
+									|もろきゆう							|
+									|￥380								|
+jp_hor_3line.png					|つけもの							|									|baidu
+									|もろきゆう							|
+									|うめきゆう							|うめきゆう
+jp_hor_3line_withNum.png			|つけもの							|									|baidu
+									|￥280								|っけもの \280
+									|もろきゆう							|もろきゅぅ \38 
+									|￥380								|うめきゆう \380 
+									|うめさゆう							|
+									|￥380								|
+
+## ver
+src									|baidu                              |tesseract							|winner
+jp_ver_1.jpg						|驶長ーミ						    |梅ハィボール						|tessearct
+jp_ver_2.jpg						|トNトてンーミ					    |コアツプガラナハイボール			|tessearct
+jp_ver_3.jpg						|マーンいー凵					    |コークハイボール					|tessearct
+jp_ver_withNum_1.jpg				|X分m什o						    |メガジョッキ 690円					|tessearct
+jp_ver_withNum_2.jpg				|Xかm世ooE						    |メガジョッキ 690円					|tessearct
+jp_ver_2Line_1.png					|州小6								|焼きそぱ							|tessearct
+									|hトハ长入							|チャンポン
+jp_ver_2Line_2.png					|4で螺								|NULL								|Failed
+									|1J抗								|
+jp_ver_3Line_1.png					|砂豚と								|NULL								|Failed
+									|ずバり								|
+
+
+综述：
+横向识别，一行多行，baidu准确度都很高；tesseract稍低，且准确度无法保证
+纵向识别，一列多列，baidu都无法准确识别，识别度为0；tesseract一列可以识别，准确度较高；多列可以识别但无法保证准确度。

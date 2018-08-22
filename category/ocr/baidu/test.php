@@ -10,7 +10,13 @@ $secret_key = $app_info['secret_key'];
 
 $client = new AipOcr($app_id, $app_key, $secret_key);
 
-$image = file_get_contents(__DIR__ .'/../test/jp');
+if (empty($argv[1])) {
+	exit("usage: $argv[0] filePath");
+}
+if (!is_file($argv[1])) {
+	exit("$argv[1] is not a file");
+}
+$image = file_get_contents($argv[1]);
 
 // 如果有可选参数
 $options = array();
