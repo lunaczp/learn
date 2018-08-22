@@ -10,7 +10,7 @@ $secret_key = $app_info['secret_key'];
 
 $client = new AipOcr($app_id, $app_key, $secret_key);
 
-$image = file_get_contents(__DIR__ .'/../test/jp.jpg');
+$image = file_get_contents(__DIR__ .'/../test/jp');
 
 // 如果有可选参数
 $options = array();
