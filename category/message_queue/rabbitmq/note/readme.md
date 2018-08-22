@@ -68,14 +68,14 @@ Exchanger模式：
         - 1vsXN。使用命名Exchanger
             - 每个consumer启动匿名queue，并绑定指定routing_key到Exchanger
             - producer发送消息时，指定routing_key，不同consumer只会接收到自己注册的routing_key对应的消息
-        - 1vsFN。同上，但是routing_key是特殊的。
-            - 比如consumerA 注册了routing_key: "user.*","reg.center.*"
-            - consumerB注册了routing_key: "admin.*","*.id"
-            - 当producer生产了一个消息，routing_key=
-                - "user.a"，consumerA可以收到
-                - “admin.m”, consumerB可以收到
-                - “user.id”, consumerA,consumerB都可以收到
-                - “x.y.z” 被丢弃
+- topic 主题模式。类似于上面的1vsXN。但是routing_key可以说特殊的值“#”(zero or more world)，“*”(exactly one word)。
+    - 比如consumerA 注册了routing_key: "user.*","reg.center.*"
+    - consumerB注册了routing_key: "admin.*","*.id"
+    - 当producer生产了一个消息，routing_key=
+        - "user.a"，consumerA可以收到
+        - “admin.m”, consumerB可以收到
+        - “user.id”, consumerA,consumerB都可以收到
+        - “x.y.z” 被丢弃
 
 - fanout 广播模式，此种模式下所有消息都会投递到所有consumer
     - producer
