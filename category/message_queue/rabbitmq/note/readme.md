@@ -90,6 +90,14 @@ Exchanger模式：
 更多参考 https://www.rabbitmq.com/tutorials/tutorial-one-php.html
 
 
+其他
+==============
+- RabbitMQ的内存模式，让它更适用于消费者和生产者速率基本一致的情况，因为消费者如果速率不够，会导致消息挤压在server，可能会撑爆内存。
+- RabbitMQ是smart broker/dumb consumer模式，Kafka是dumb broker/smart consumer模式
+- RabbitMQ主要是push(一些场景有pull的情况)，broker控制速率。Kafka是pull，consumer控制速率。
+- 性能方面，Kafka 可以轻松达到100k/sec，RabbitMQ 20k/sec。但是具体场景需要具体测量。(from https://content.pivotal.io/blog/understanding-when-to-use-rabbitmq-or-apache-kafka)
+
+
 适用场景与对比
 ==============
 
@@ -101,4 +109,24 @@ Exchanger模式：
     - 因为是内存型，所有消息都在内存，当开启了ack而大量消息没有被ack的情况下，消息堆积有可能撑爆内存。比如消费端挂了几个小时，对RabbitMQ server 的性能影响很大。
 
 **适用**
-- 简单场景，实时
+- 生产者和消费者速率基本一致，期望实时的消息传输
+- 消息是短期的，消费完即删除，不需要消息存储和回溯
+    - 多个consumer消费一致，不需要不同的消费者设定不同的偏移
+- 需要复杂的路由规则
+    - 支持point to point, request / reply, and publish/subscribe messaging
+- 在安全性，监控和授权方面，RabbitMQ自身提供的功能更完善
+
+
+其他资料
+==============
+RabbitMQ Arch
+![](doc/arch_2.png)
+
+Kafka Arch
+![](doc/kafka_arch.png)
+
+一句话对比: (from https://content.pivotal.io/blog/understanding-when-to-use-rabbitmq-or-apache-kafka)
+> RabbitMQ is designed as a general purpose message broker, employing several variations of point to point, request/reply and pub-sub communication styles patterns.  It uses a smart broker / dumb consumer model, focused on consistent delivery of messages to consumers that consume at a roughly similar pace as the broker keeps track of consumer state.  
+
+> Apache Kafka is designed for high volume publish-subscribe messages and streams, meant to be durable, fast, and scalable. At its essence, Kafka provides a durable message store, similar to a log, run in a server cluster, that stores streams of records in categories called topics.
+
