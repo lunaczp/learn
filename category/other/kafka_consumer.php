@@ -11,6 +11,7 @@
 		$rk->addBrokers("127.0.0.1");
 		$topic = $rk->newTopic("test", $cf);
 		while (true) {
+			$t1 = microtime(true);
 			$topic->consumeStart(0, RD_KAFKA_OFFSET_STORED);
 			$msg = $topic->consume(0, 1000);
 			var_dump($msg);
@@ -21,7 +22,10 @@
 				echo $msg->payload, "\n";
 			}
 			$topic->consumeStop(0);
-			sleep(1);
+			$t2 = microtime(true);
+			$int = floor(($t2 - $t1) * 1000);
+			echo $int.PHP_EOL;
+			//sleep(1);
 		}
 	} catch (Exception $e) {
 		echo $e->getMessage();
