@@ -1,3 +1,5 @@
 <?php
+$producer = new \Gaea\Client\Producer();
 
-$pro
+$r = $producer->publish("test", "xxx");
+var_export($r);
