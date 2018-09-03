@@ -1,0 +1,56 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "aa93b281a4055f3ce2e1184f383f6dd0",
+    "packages": [
+        {
+            "name": "nuc/gaea-sdk",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lunaczp/gaea-sdk.git",
+                "reference": "87c415cf5c9893b8164a9380faabfb4cf56d3d02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lunaczp/gaea-sdk/zipball/87c415cf5c9893b8164a9380faabfb4cf56d3d02",
+                "reference": "87c415cf5c9893b8164a9380faabfb4cf56d3d02",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Gaea\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "lunaczp",
+                    "email": "moon.zhp@gmail.com"
+                }
+            ],
+            "description": "library for gaea mq platform",
+            "time": "2018-09-03T11:07:38+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "nuc/gaea-sdk": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

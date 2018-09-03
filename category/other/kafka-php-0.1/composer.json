@@ -1,0 +1,12 @@
+{
+    "name": "nuc/kafka-php-0.1",
+    "authors": [
+        {
+            "name": "lunaczp",
+            "email": "moon.zhp@gmail.com"
+        }
+    ],
+    "require": {
+        "nmred/kafka-php": "0.1.*"
+    }
+}

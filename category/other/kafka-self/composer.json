@@ -1,0 +1,13 @@
+{
+    "name": "nuc/kafka-self",
+    "authors": [
+        {
+            "name": "lunaczp",
+            "email": "moon.zhp@gmail.com"
+        }
+    ],
+    "require": {
+        "nuc/gaea-sdk": "dev-master"
+    },
+	"minimum-stability":"dev"
+}
