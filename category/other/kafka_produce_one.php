@@ -19,9 +19,6 @@
 		$rk->addBrokers("127.0.0.1");
 		$topic = $rk->newTopic("test", $cf);
 		$topic->produce(0,0,'test' . "one".date("Y-m-d H:i:s"));
-		//while ($rk->getOutQLen() > 0) {
-		//	$rk->poll(1);
-		//}
 	} catch (Exception $e) {
 		echo $e->getMessage();
 	}
