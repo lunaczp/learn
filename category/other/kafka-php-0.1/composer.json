@@ -6,7 +6,20 @@
             "email": "moon.zhp@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Z\\": "src/Z"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Z\\": "src/Z"
+        }
+    },
     "require": {
         "nmred/kafka-php": "0.1.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.0"
     }
 }
