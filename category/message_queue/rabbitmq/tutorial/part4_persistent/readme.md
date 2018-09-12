@@ -16,6 +16,8 @@
 
 效果：Robbin-round分发
 
+备注：示例是使用的direct模式的exchange。对于topic模式的exchange也是一样的。两个进程绑定同一个queue，则server会采用Robbin-round分发的模式发送消息。
+
 # Case 3
 一个producer，两个consumer用同一个queue，绑定不同routing_key
 ```
