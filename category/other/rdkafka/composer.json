@@ -1,0 +1,10 @@
+{
+    "name": "nuc/rdkafka",
+    "authors": [
+        {
+            "name": "lunaczp",
+            "email": "moon.zhp@gmail.com"
+        }
+    ],
+    "require": {}
+}
